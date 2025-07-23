@@ -16,9 +16,9 @@ app.get('/',(req,res)=>{
    res.send('Server is connected');
 })
 
-app.use(requireAuth());
+// app.use(requireAuth());
 
-app.use('/api/ai', aiRouter);
+app.use('/api/ai',requireAuth(), aiRouter);
 
 const PORT= process.env.PORT || 3000;
 
